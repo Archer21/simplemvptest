@@ -1,7 +1,6 @@
-package com.archer.mvptest.presenter;
+package com.archer.mvptest.mvp.presenter;
 
-import com.archer.mvptest.domain.Song;
-import com.archer.mvptest.viewmodel.MainActivityViewModel;
+import com.archer.mvptest.mvp.viewmodel.MainActivityViewModel;
 
 public interface MvpPresenter {
     /**

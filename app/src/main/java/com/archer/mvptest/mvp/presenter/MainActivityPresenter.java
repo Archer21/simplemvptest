@@ -1,8 +1,10 @@
-package com.archer.mvptest.presenter;
+package com.archer.mvptest.mvp.presenter;
+
+import android.widget.Toast;
 
 import com.archer.mvptest.domain.Song;
-import com.archer.mvptest.interactor.SongInteractor;
-import com.archer.mvptest.viewmodel.MainActivityViewModel;
+import com.archer.mvptest.mvp.interactor.SongInteractor;
+import com.archer.mvptest.mvp.viewmodel.MainActivityViewModel;
 
 import java.lang.ref.WeakReference;
 
@@ -72,13 +74,15 @@ public class MainActivityPresenter implements MvpPresenter, MainActivityViewMode
      * MainActivityViewModel Override methods
      */
 
-    @Override
-    public void showToast(String msg) {
-
-    }
-
+    // Show AlertDialog
     @Override
     public void showAlert(String msg) {
+        // show alert Box
+    }
 
+    // Show Toast
+    @Override
+    public void showToast(String msg) {
+        Toast.makeText();
     }
 }
