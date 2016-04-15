@@ -54,6 +54,7 @@ public class SongAdapter extends RecyclerView.Adapter<SongViewHolder> {
 
     public void addItem(Song song){
         songList.add(song);
+        notifyDataSetChanged();
     }
 
     public void removeSong(Song song){

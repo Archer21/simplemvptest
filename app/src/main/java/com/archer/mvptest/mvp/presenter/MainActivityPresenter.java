@@ -5,6 +5,7 @@ import android.widget.Toast;
 import com.archer.mvptest.domain.Song;
 import com.archer.mvptest.mvp.interactor.SongInteractor;
 import com.archer.mvptest.mvp.viewmodel.MainActivityViewModel;
+import com.archer.mvptest.view.adapter.SongAdapter;
 
 import java.lang.ref.WeakReference;
 
@@ -14,10 +15,11 @@ public class MainActivityPresenter implements MvpPresenter, MainActivityViewMode
     private WeakReference<MainActivityViewModel> mView;
     private SongInteractor mInteractor;
     private boolean mIsChangingConfig;
+    private SongAdapter mAdapter;
 
-    public MainActivityPresenter(MainActivityViewModel view){
+    public MainActivityPresenter(MainActivityViewModel view, SongAdapter adapter){
         this.mView = new WeakReference<MainActivityViewModel>(view);
-        this.mInteractor = new SongInteractor(this);
+        this.mInteractor = new SongInteractor(this, adapter);
     }
 
     /**
@@ -77,12 +79,12 @@ public class MainActivityPresenter implements MvpPresenter, MainActivityViewMode
     // Show AlertDialog
     @Override
     public void showAlert(String msg) {
-        // show alert Box
+        mView.get().showAlert(msg);
     }
 
     // Show Toast
     @Override
     public void showToast(String msg) {
-        Toast.makeText();
+        mView.get().showToast(msg);
     }
 }

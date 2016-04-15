@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 public class SongViewHolder extends RecyclerView.ViewHolder {
 
     @Bind(R.id.song_title)
-    private TextView mSongTitle;
+    TextView mSongTitle;
 
     public SongViewHolder(View itemView) {
         super(itemView);
